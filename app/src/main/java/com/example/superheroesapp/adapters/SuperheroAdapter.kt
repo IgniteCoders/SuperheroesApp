@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.superheroesapp.data.Superhero
 import com.example.superheroesapp.databinding.ItemSuperheroBinding
+import com.squareup.picasso.Picasso
 
 class SuperheroAdapter (private var dataSet: List<Superhero> = emptyList()) : RecyclerView.Adapter<SuperheroViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
@@ -28,5 +29,6 @@ class SuperheroViewHolder(private val binding: ItemSuperheroBinding) : RecyclerV
 
     fun render(superhero: Superhero) {
         binding.nameTextView.text = superhero.name
+        Picasso.get().load(superhero.image.url).into(binding.avatarImageView)
     }
 }

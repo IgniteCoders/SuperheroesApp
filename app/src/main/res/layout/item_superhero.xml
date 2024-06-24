@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardCornerRadius="8dp">
+        app:cardCornerRadius="16dp">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -18,15 +18,19 @@
             <ImageView
                 android:id="@+id/avatarImageView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
 
             <TextView
                 android:id="@+id/nameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
                 android:text="SUPERMAN"
                 android:textSize="24sp"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:background="@color/transparent_grey"/>
 
         </FrameLayout>
 
