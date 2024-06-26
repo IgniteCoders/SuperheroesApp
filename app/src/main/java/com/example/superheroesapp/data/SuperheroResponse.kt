@@ -10,6 +10,7 @@ data class SuperheroResponse(
 }
 
 data class Superhero (
+    @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String,
     @SerializedName("image") val image: Image
 ) {
