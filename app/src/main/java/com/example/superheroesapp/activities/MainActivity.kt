@@ -2,7 +2,9 @@ package com.example.superheroesapp.activities
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.superheroesapp.R
 import com.example.superheroesapp.adapters.SuperheroAdapter
@@ -35,6 +37,28 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         searchByName("a")
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_activity_main, menu)
+
+        val searchViewItem = menu.findItem(R.id.menu_search)
+        val searchView = searchViewItem.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (query != null) {
+                    searchByName(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
+
+        return true
     }
 
     private fun searchByName(query: String){
