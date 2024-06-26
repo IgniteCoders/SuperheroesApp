@@ -1,5 +1,6 @@
 package com.example.superheroesapp.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -70,7 +71,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToDetail(superhero: Superhero) {
-        Toast.makeText(this, superhero.name, Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, superhero.name, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, DetailActivity::class.java)
+        //intent.putExtra("SUPERHERO_ID", superhero.id)
+        startActivity(intent)
     }
 
     private fun searchByName(query: String){
