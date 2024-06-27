@@ -2,5 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="transparent_grey">#808B8B8B</color>
+
+    <color name="card_background">#FFC107</color>
+    <color name="biography_background">#E3C4A0</color>
+
+    <!-- Alignment colors -->
+    <color name="good_color">#4CAF50</color>
+    <color name="evil_color">#F44336</color>
+
+    <!-- Chart colors -->
+    <color name="chart_line">#9C27B0</color>
+    <color name="chart_fill">#673AB7</color>
 </resources>
